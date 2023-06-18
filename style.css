@@ -1,16 +1,131 @@
-.name {
-    text-align: center;
-}
-
-.name span.last-name {
-    color: black;
-}
-.name {
-    color: blue;
-}
-body {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .container {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .name {
+    text-align: center;
+  }
+  
+  .name span.last-name {
+    color: black;
+  }
+  
+  .name {
+    color: blue;
+  }
+  
+  .switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .switch label {
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: gray;
+    display: block;
+    position: relative;
+  }
+  
+  .switch label:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .switch input[type="checkbox"]:checked + label {
+    background-color: green;
+  }
+  
+  .switch input[type="checkbox"]:checked + label:before {
+    transform: translateX(20px);
+  }
+  
+  .job-title {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .about-me-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .about-me-button:hover {
+    background-color: darkblue;
+  }
+
+  /* Para celular */
+@media (max-width: 600px) {
+    .name {
+      font-size: 2rem;
+    }
+    .job-title {
+      font-size: 0.8rem;
+    }
+    .about-me-button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  /* Para tablet */
+  @media (min-width: 600px) and (max-width: 1024px) {
+    .name {
+      font-size: 3rem;
+    }
+    .job-title {
+      font-size: 1rem;
+    }
+    .about-me-button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  
+  /* Para computador */
+  @media (min-width: 1024px) {
+    .name {
+      font-size: 4rem;
+    }
+    .job-title {
+      font-size: 1.2rem;
+    }
+    .about-me-button {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
